@@ -11,11 +11,11 @@ A web application using machine learning to detect fraudulent credit card transa
 -   **Multi-Model Approach**: Utilizes Logistic Regression, Random Forest, and XGBoost, combined into a powerful hybrid ensemble model for high accuracy.
 -   **Interactive Web Interface**: Predict single transactions via a manual form or upload a CSV file for batch processing.
 -   **Real-Time Results**: Get instant predictions with confidence scores and a clear interpretation of the result.
--   **Class Imbalance Handling**: Employs the SMOTE technique to create a balanced dataset for more effective model training.
+-   **Class Imbalance Handling**: Manages the skewed dataset by implementing **cost-sensitive learning** (class weighting) within the models to improve detection of rare fraud events.
 
 ## 📊 Performance Highlight
 
-The final hybrid model achieves an accuracy of **99.97%** and an F1-Score of **85.11%** on the test set, demonstrating high effectiveness in identifying fraudulent transactions.
+The final hybrid model achieves an accuracy of **99.94%** and an F1-Score of **83.42%** on the test set, demonstrating high effectiveness in identifying fraudulent transactions.
 
 ## 🔍 How to Use
 
@@ -34,5 +34,5 @@ The final hybrid model achieves an accuracy of **99.97%** and an F1-Score of **8
 The machine learning pipeline involves three main stages:
 
 1.  **Preprocessing**: Transaction data is normalized using Scikit-learn's `StandardScaler`.
-2.  **Balancing**: The highly imbalanced dataset is balanced using the **SMOTE** (Synthetic Minority Oversampling Technique) to prevent model bias towards normal transactions.
+2.  **Balancing**: Instead of resampling, the models use **cost-sensitive learning** (class weighting) to penalize misclassifications of the rare fraud class more heavily, forcing the model to pay closer attention to it.
 3.  **Modeling**: Several models are trained on the preprocessed data. A final **Hybrid Model** (a soft-voting ensemble of Random Forest and XGBoost) is used for making the final predictions, as it provides the best overall performance.

@@ -4,7 +4,7 @@ A web application using machine learning to detect fraudulent credit card transa
 
 ## 🚀 Live Demo
 
-🌐 **Live Application**: [https://credit-card-fraud-detection-m4dr.onrender.com](https://credit-card-fraud-detection-m4dr.onrender.com)
+🌐 **Live Application**: [https://fraud-detection-5z01.onrender.com](https://fraud-detection-5z01.onrender.com)
 
 ## 🌟 Key Features
 
